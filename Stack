@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+class Stack {
+
+#define MAX 20
+public:
+	int stack[MAX];
+	int top = -1;
+
+	bool push(int value);
+	bool pop();
+	int findMin();
+};
+
+bool Stack::push(int value) {
+	if (top == MAX - 1) {
+		cout << "Stack is full";
+		return false;
+	}
+	else
+	{
+		stack[++top] = value;
+		cout << value << " pushed into stack";
+		return true;
+	}
+}
+bool Stack::pop() {
+	if (top < 0)
+	{
+		cout << "Stack is empty";
+		return false;
+	}
+	else
+	{
+		stack[--top];
+		return true;
+	}
+}
+int Stack::findMin() {
+	int min = NULL;
+	for (int i = 0; i < top; i++) {
+		if (i < i + 1)
+		{
+			min = i;
+		}
+	}
+	return min;
+}
+int main() {
+
+	return 0;
+}
